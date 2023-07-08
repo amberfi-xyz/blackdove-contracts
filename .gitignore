@@ -1,0 +1,24 @@
+node_modules
+build
+tmp
+bin
+flatten
+flat
+
+## Configurations
+.env
+.idea
+.openzeppelin
+.vscode
+
+## Ganache
+ganache-accounts.json
+
+## Solidity Coverage
+.coverage_artifacts
+.coverage_contracts
+.coverage_tests
+coverage
+coverage.json
+## Gas Usage
+gas-usage-report.log

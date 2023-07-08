@@ -1,0 +1,67 @@
+{
+  "name": "blackdove-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "npx truffle compile --all",
+    "test": "npx truffle test --compile-none",
+    "ctest": "yarn compile && yarn test",
+    "coverage": "npx truffle run coverage",
+    "lint": "npx solhint contracts/**/*.sol && npx solhint contracts/**/**/*.sol",
+    "prettier": "prettier --write contracts/**/*.sol",
+    "flatten-blackdove-nft": "truffle run flatten contracts/BlackdoveNFT.sol",
+    "flatten-auction-manager": "truffle run flatten contracts/AuctionManager.sol",
+    "slither": "slither Flatten.sol",
+    "deploy-mumbai": "npx truffle migrate --network mumbai --reset",
+    "verify-mumbai": "npx truffle run verify BlackdoveNFT AuctionManager --network mumbai --verifiers=etherscan",
+    "deploy-goerli": "npx truffle migrate --network goerli --reset",
+    "verify-goerli": "npx truffle run verify BlackdoveNFT AuctionManager --network goerli --verifiers=etherscan",
+    "deploy-sepolia": "npx truffle migrate --network sepolia --reset",
+    "verify-sepolia": "npx truffle run verify BlackdoveNFT AuctionManager --network sepolia --verifiers=etherscan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amberfi/blackdove-contracts.git"
+  },
+  "keywords": [
+    "truffle",
+    "ethereum",
+    "blackdove",
+    "contracts",
+    "dutch+auction"
+  ],
+  "author": "Amberfi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amberfi/blackdove-contracts.git/issues"
+  },
+  "homepage": "https://github.com/amberfi/blackdove-contracts.git#readme",
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "@openzeppelin/truffle-upgrades": "^1.17.0",
+    "@truffle/hdwallet-provider": "^2.1.2",
+    "big-number": "^2.0.0",
+    "bn.js": "^5.2.1",
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "chai-bn": "^0.3.1",
+    "dotenv": "^16.0.3",
+    "eth-gas-reporter": "^0.2.25",
+    "ethers": "^6.1.0",
+    "fs": "^0.0.1-security",
+    "ganache": "^7.5.0",
+    "ganache-cli": "^6.12.2",
+    "ganache-time-traveler": "^1.0.16",
+    "prettier": "^2.8.0",
+    "prettier-plugin-solidity": "^1.0.0",
+    "solhint": "^3.3.7",
+    "solidity-coverage": "^0.8.2",
+    "truffle": "^5.7.4",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-flatten": "^1.0.8",
+    "truffle-plugin-verify": "^0.6.1"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.8.0"
+  }
+}
